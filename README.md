@@ -8,8 +8,19 @@ This R package includes tools for morphological analysis and was inspired by the
 Install the latest version of this package by entering the following in R:
 
 ```R
-# install.packages("devtools") # Uncomment and run if you don't have devtools installed
-devtools::install_github("cbirdlab/morphoTools")
+if (!"morphoTools" %in% installed.packages()) {
+  # Check if 'devtools' is installed
+  if (!"devtools" %in% installed.packages()) {
+    # Install 'devtools' if it's not installed
+    install.packages("devtools")
+  }
+  
+  # Load 'devtools'
+  library(devtools)
+  
+  # Install 'morphoTools' from GitHub using 'devtools'
+  devtools::install_github("cbirdlab/morphoTools")
+}
 ```
 
 ## Main Functionality
